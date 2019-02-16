@@ -1,5 +1,5 @@
 {
-  "name": "Game",
+  "name": "task-14",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "autoprefixer-cli": "^1.0.0",
+    "flickity-hash": "^1.0.3",
     "globstar": "^1.0.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.11.0",
@@ -31,7 +32,7 @@
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch": "npm-run-all build -p watch:*",
     "watch:sassprefixer": "npm-run-all sass autoprefixer",
-    "sass": "onchange style.scss -- node-sass --output-style compact -o css sass",
+    "sass": "onchange sass/style.scss -- node-sass --output-style compact -o css sass",
     "autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.css css/style.css",
     "watch:browsersync": "browser-sync start --server --watch"
   },

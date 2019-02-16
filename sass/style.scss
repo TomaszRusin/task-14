@@ -1,0 +1,35 @@
+.carousel-cell {
+    width: 100%; /* full width */
+    min-height: 250px;
+    height: 50vh; /* height of carousel */
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .progress-bar {
+    height: 20px;
+    width: 0;
+    background: #333;
+  }
+
+.container {
+    color: white;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    // background-color: 
+    width: 1200px;
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+}
+
+.button-restart {
+    position: absolute;
+    z-index: 2;
+}
