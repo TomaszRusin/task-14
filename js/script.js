@@ -1,12 +1,15 @@
-var templateCell = document.getElementById('template-carousel-cell').innerHTML;
-var ul = document.getElementById('test');
 
-Mustache.parse(templateCell);
+
+var templateCell = document.getElementById('template-carousel-cell').innerHTML;
+
+var placesList = '';
 
 for(var i = 0; i < placesData.length; i++){
-  var places = Mustache.render(templateCell, placesData[i]);
-  ul.insertAdjacentHTML(places);
+  placesList += Mustache.render(templateCell, placesData[i]);
 }
+
+document.getElementById('target').insertAdjacentHTML('beforeend', placesList);
+
 
 
 
