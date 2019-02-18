@@ -1,3 +1,15 @@
+var templateCell = document.getElementById('template-carousel-cell').innerHTML;
+var ul = document.getElementById('test');
+
+Mustache.parse(templateCell);
+
+for(var i = 0; i < placesData.length; i++){
+  var places = Mustache.render(templateCell, placesData[i]);
+  ul.insertAdjacentHTML(places);
+}
+
+
+
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   // options

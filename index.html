@@ -13,23 +13,43 @@
 <body>
     <button class="button-restart">Restart</button>
     <div class="main-carousel">
-        <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://images.pexels.com/photos/879359/pexels-photo-879359.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-            <div class="container">Zawsze chciałem odwiedzić chiny</div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-            <div class="container">Japonię też chciałem odwiedzić</div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://images.pexels.com/photos/305256/pexels-photo-305256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-            <div class="container">A Los angeles to już na bank kiedyś odwiedzę</div>
-        </div>
+        <ul id="test">
+
+        </ul>
     </div>
     <div class="progress-bar"></div>
 
+    <script id="template-carousel-cell" type="x-tmpl-mustache">
+        <li class="carousel-cell" id="carousel-cell">
+            <div class="container">
+                {{title}} {{{decription}}}
+            </div>
+        </li>
+    </script>
     
-
+    <script>
+        var placesData = [
+            {
+                image: 'https://images.pexels.com/photos/879359/pexels-photo-879359.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
+                title: 'Chiny',
+                decription: "<br><p>Zawsze chciałem odwiedzić</p> <img src='https://images.pexels.com/photos/879359/pexels-photo-879359.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' alt='China'> <p>chiny</p>"
+            },
+            {
+                image: 'https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
+                title: 'Japonia',
+                decription: "<br><p>Zawsze chciałem odwiedzić</p> <img src='https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' alt='Japan'> <p>japonię</p>"
+            },
+            {
+                image: 'https://images.pexels.com/photos/305256/pexels-photo-305256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
+                title: 'LA',
+                decription: "<br><p>Zawsze chciałem odwiedzić</p> <img src='https://images.pexels.com/photos/305256/pexels-photo-305256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' alt='LA'> <p>los angeles</p>"
+            }
+        ];
+    </script>
 
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
+    <script src="vendor/mustache.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
