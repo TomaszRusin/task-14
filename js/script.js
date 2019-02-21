@@ -10,9 +10,6 @@ for(var i = 0; i < placesData.length; i++){
 
 document.getElementById('target').insertAdjacentHTML('beforeend', placesList);
 
-
-
-
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   // options
@@ -36,4 +33,32 @@ buttonRestart.addEventListener( 'click', function( event ) {
     // filter for button clicks
     flkty.select(0);
   });
+
+  var infos = document.getElementById('infos');
+
+  var allMarkers = [];
+
+  var allCoords = [];
+
+  window.initMap = function(){
+    for(var i=0; i<placesData.length; i++){
+      allCoords.push(placesData[i].coords);
+    }
+
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: allCoords[0]});
+
+    for(var p = 0; p < allCoords.length; p++){
+ 
+      allMarkers[p] = new google.maps.Marker({
+        position: allCoords[p],
+        map: map
+      });
+      allMarkers[p].addListener('click', clickedMarker);	
+      
+      var clickedMarker = function(){
+        infos.innerHTML = 'You clicked marker ';// zupełny brak pojęcia jak zrobić żeby markery były np 1-3
+      };
+    } 
+  };
   

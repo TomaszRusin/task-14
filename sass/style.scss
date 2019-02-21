@@ -12,13 +12,13 @@
     background: #333;
   }
 
-.container {
+.carousel-container {
     color: white;
     font-size: 20px;
     font-family: 'Merriweather', serif;
     // background-color: 
     width: 100%;
-    height: 90%;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -28,7 +28,23 @@
     background-position: center;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  h3 {
+    margin: 0;
+  }
+}
+
 .button-restart {
     position: absolute;
     z-index: 2;
+}
+
+#map {
+  width: 100%;
+  min-height: 250px;
+  height: 50vh;
+  background-color: grey;
 }

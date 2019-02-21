@@ -15,32 +15,43 @@
     <div class="main-carousel" id="target"></div>
     <div class="progress-bar"></div>
 
-    <script id="template-carousel-cell" type="x-tmpl-mustache">
-        <div class="carousel-cell" >
-            <div class="container" style="background-image: url({{image}})">
-                 {{title}} {{{description}}} 
-                </div>
-        </div>
+    <span class="metadata-marker" style="display: none;" data-region_tag="html-body"></span>
+    <div class="container">
+        <h3>My Google Maps Demo</h3>
+        <div id="infos"></div>
+        <div id="map"></div>
+    </div>
+    <script>
+        <span class="metadata-marker" style="display: none;" data-region_tag="script-body"></span>// Initialize and add the map
     </script>
 
-    
+    <script id="template-carousel-cell" type="x-tmpl-mustache">
+        <div class="carousel-cell" >
+            <div class="carousel-container" style="background-image: url({{image}})">
+                {{title}} {{{description}}} 
+            </div>
+        </div>
+    </script>
     
     <script>
         var placesData = [
             {
                 image: 'https://images.pexels.com/photos/879359/pexels-photo-879359.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
                 title: 'Chiny',
-                description: "<p> są spoko</p>"
+                description: "<p> są spoko</p>",
+                coords: {lat: 39.916164, lng: 116.397079}
             },
             {
                 image: 'https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
                 title: 'Japonia',
-                description: "<p> jest spoko</p>"
+                description: "<p> jest spoko</p>",
+                coords: {lat: 35.363949, lng: 138.727907}
             },
             {
                 image: 'https://images.pexels.com/photos/305256/pexels-photo-305256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
                 title: 'LA',
-                description: "<p> jest spoko</p>"
+                description: "<p> jest spoko</p>",
+                coords: {lat: 34.009104, lng: -118.497651}
             }
         ];
     </script>
@@ -49,5 +60,6 @@
     <script src="vendor/hash.js"></script>
     <script src="vendor/mustache.min.js"></script>
     <script src="js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEqikwDidfUiPPB5MjZxqz6Fs91nr_UDs&callback=initMap"></script>
 </body>
 </html>
