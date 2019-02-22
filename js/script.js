@@ -43,22 +43,22 @@ buttonRestart.addEventListener( 'click', function( event ) {
   window.initMap = function(){
     for(var i=0; i<placesData.length; i++){
       allCoords.push(placesData[i].coords);
+     
     }
-
     var map = new google.maps.Map(
         document.getElementById('map'), {zoom: 4, center: allCoords[0]});
 
     for(var p = 0; p < allCoords.length; p++){
- 
+       
       allMarkers[p] = new google.maps.Marker({
         position: allCoords[p],
-        map: map
+        map: map,
+        id: [p + 1]
       });
-      allMarkers[p].addListener('click', clickedMarker);	
-      
-      var clickedMarker = function(){
-        infos.innerHTML = 'You clicked marker ';// zupełny brak pojęcia jak zrobić żeby markery były np 1-3
-      };
+
+      allMarkers[p].addListener('click', function(){
+        infos.innerHTML = 'You clicked marker ' + this.id;
+      });
     } 
   };
   
