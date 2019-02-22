@@ -30,7 +30,6 @@ flkty.on( 'scroll', function( progress ) {
 var buttonRestart = document.querySelector('.button-restart');
 
 buttonRestart.addEventListener( 'click', function( event ) {
-    // filter for button clicks
     flkty.select(0);
   });
 
@@ -40,25 +39,27 @@ buttonRestart.addEventListener( 'click', function( event ) {
 
   var allCoords = [];
 
+  for(var i=0; i<placesData.length; i++){
+    allCoords.push(placesData[i].coords);
+  }
+
   window.initMap = function(){
-    for(var i=0; i<placesData.length; i++){
-      allCoords.push(placesData[i].coords);
-     
-    }
     var map = new google.maps.Map(
         document.getElementById('map'), {zoom: 4, center: allCoords[0]});
 
     for(var p = 0; p < allCoords.length; p++){
-       
       allMarkers[p] = new google.maps.Marker({
         position: allCoords[p],
         map: map,
-        id: [p + 1]
+        id: [p]
       });
-
-      allMarkers[p].addListener('click', function(){
-        infos.innerHTML = 'You clicked marker ' + this.id;
+      allMarkers[p].addListener('click', function( event ){
+        flkty.select(this.id);
       });
     } 
+    flkty.on( 'change', function( index ) {
+      map.panTo(allCoords[index]);
+    });
   };
+  
   
