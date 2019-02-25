@@ -53,7 +53,7 @@ buttonRestart.addEventListener( 'click', function( event ) {
       allMarkers[p] = new google.maps.Marker({
         position: allCoords[p],
         map: map,
-        id: [p + 1]
+        id: p + 1
       });
 
       allMarkers[p].addListener('click', function(){
